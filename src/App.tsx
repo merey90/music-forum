@@ -3,19 +3,19 @@ import Button from '@material-ui/core/Button';
 
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        HEADER
-      </header>
+      <header className="App-header">HEADER</header>
       <main>
         MAIN
         <br />
-        <Button variant="contained" color="primary">SIMPLE BUTTON</Button>
+        <Button variant="contained" color="primary">
+          SIMPLE BUTTON
+        </Button>
       </main>
     </div>
   );
-}
+};
 
 export default App;
