@@ -1,18 +1,25 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 
 import './App.css';
+import { Header } from './components/Header';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { MasterClasses } from './MasterClasses';
+import { Welcome } from './Welcome';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">HEADER</header>
+      <Header />
       <main>
-        MAIN
-        <br />
-        <Button variant="contained" color="primary">
-          SIMPLE BUTTON
-        </Button>
+        <Switch>
+          <Route path="/masterclasses">
+            <MasterClasses />
+          </Route>
+          <Route path="/">
+            <Welcome />
+          </Route>
+          <Redirect to="/" />
+        </Switch>
       </main>
     </div>
   );
