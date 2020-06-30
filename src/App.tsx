@@ -2,9 +2,8 @@ import React from 'react';
 
 import './App.css';
 import { Header } from './components/Header';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import { MasterClasses } from './MasterClasses';
-import { Welcome } from './Welcome';
+import { Switch, Redirect } from 'react-router-dom';
+import { Routes, Routing, HomeRoute } from './components/Routing';
 
 const App: React.FC = () => {
   return (
@@ -12,13 +11,8 @@ const App: React.FC = () => {
       <Header />
       <main>
         <Switch>
-          <Route path="/masterclasses">
-            <MasterClasses />
-          </Route>
-          <Route path="/">
-            <Welcome />
-          </Route>
-          <Redirect to="/" />
+          {Routes.map(Routing)}
+          <Redirect to={HomeRoute.path} />
         </Switch>
       </main>
     </div>
