@@ -11,7 +11,6 @@ export interface INavigation {
 export const Navigation: React.FC<INavigation> = ({ handleClose }) => {
   const { pathname } = useLocation();
 
-  console.log('pathname: ', pathname);
   const renderLink = ({ title, path, disabled }: IRoute) => (
     <Button
       key={title}

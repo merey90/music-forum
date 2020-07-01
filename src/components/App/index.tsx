@@ -1,11 +1,10 @@
 import React from 'react';
 
-import './App.css';
-import { Header } from './components/Header';
+import { Header } from '../Header';
 import { Switch, Redirect } from 'react-router-dom';
-import { Routes, Routing, HomeRoute } from './components/Routing';
+import { Routes, Routing, HomeRoute } from '../Routing';
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   return (
     <div className="App">
       <Header />
@@ -18,5 +17,3 @@ const App: React.FC = () => {
     </div>
   );
 };
-
-export default App;

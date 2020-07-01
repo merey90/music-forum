@@ -1,0 +1,6 @@
+{
+  "extends": "react-app",
+  "rules": {
+    "prefer-const": 2
+  }
+}

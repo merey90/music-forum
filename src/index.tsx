@@ -2,35 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles';
+import { MuiThemeProvider, StylesProvider } from '@material-ui/core/styles';
+import { ThemeProvider } from 'styled-components';
 
 import './index.css';
-import App from './App';
+import { App } from './components/App';
 import * as serviceWorker from './serviceWorker';
-
-let theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#2196f3',
-      contrastText: '#fff',
-    },
-    secondary: {
-      main: '#ff9100',
-      contrastText: '#000',
-    },
-  },
-});
-
-theme = responsiveFontSizes(theme);
+import theme from './theme';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ThemeProvider>
+    <CssBaseline />
+    <StylesProvider injectFirst>
+      <MuiThemeProvider theme={theme}>
+        <ThemeProvider theme={theme}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </ThemeProvider>
+      </MuiThemeProvider>
+    </StylesProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

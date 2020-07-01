@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <AppBar position="static" className="header">
+      <AppBar position="sticky" className="header">
         <Toolbar>
           <Hidden smUp>
             <IconButton edge="start" color="inherit" aria-label="menu" onClick={triggerDrawer} className="menu-button">
